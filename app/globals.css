@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer components {
+  .gradient-text {
+    @apply text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text;
+  }
+
+  .gradient-icon {
+    @apply fill-transparent bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text;
+  }
+
+  .landing-heading {
+    @apply text-4xl font-extrabold sm:text-5xl md:text-6xl;
+  }
+
+  .landing-para {
+    @apply mt-2 mb-12 text-base text-gray-600 sm:mt-4 sm:text-lg;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-orange-400 via-red-500 to-purple-600;
+  }
+
+  .section-heading {
+    @apply relative dark:text-gray-300 w-max left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 mb-12 text-3xl font-bold text-gray-700 sm:mb-16 md:text-4xl after:content-[""] after:w-2/3 after:h-1.5 after:absolute after:-bottom-3 after:lg:left-0 after:left-1/2 after:-translate-x-1/2 after:lg:-translate-x-0 after:rounded-full after:bg-gradient-to-r after:from-orange-400 after:via-red-500 after:to-purple-600;
+  }
+
+  .skills-container {
+    @apply grid grid-cols-2 gap-24 place-items-center md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  .skill {
+    @apply flex flex-col items-center justify-center pt-1 rounded-lg select-none w-28 bg-gray-50 dark:bg-[#212121] xs:w-32 s:w-36 md:w-40 aspect-square;
+  }
+
+  .skill-title {
+    @apply mt-1 text-base font-medium md:mt-3 sm:text-lg;
+  }
+
+  .overlay {
+    @apply fixed inset-0 z-20 w-screen h-screen bg-slate-900 bg-opacity-80;
+  }
+
+  .mobile-menu {
+    @apply fixed top-0 right-0 z-30 w-2/3 h-screen max-w-xs p-3 transition duration-500 ease-in-out bg-white;
+  }
+
+  .timeline {
+    @apply relative flex flex-col gap-8 mt-16 xs:gap-10 xs:mt-20 md:mt-28;
+  }
+
+  .timeline-line {
+    @apply w-1 h-full absolute left-[20px] xs:left-[22px] -z-10 bg-gray-50 dark:bg-[#212121] inset-0 md:mx-auto md:left-0 md:right-0;
+  }
+
+  .timeline-circle {
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-[#212121] md:absolute md:mx-auto md:left-0 md:right-0;
+  }
+
+  .timeline-container {
+    @apply relative pl-4 md:w-1/2 md:ml-auto md:pt-3 xs:pl-8;
+  }
+
+  .timeline-container-left {
+    @apply md:ml-0 md:mr-auto md:pl-0 md:pr-8;
+  }
+
+  .timeline-card {
+    @apply p-3 rounded-md bg-gray-50 dark:bg-[#212121];
+  }
+}
