@@ -3,7 +3,6 @@ import ExperienceCard from "./experienceCard";
 
 const Experience = async () => {
   const experiences = await getAllExperiences();
-  console.log(experiences);
 
   return (
     <section className="mt-32 sm:mt-44">

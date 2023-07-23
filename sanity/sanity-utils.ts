@@ -1,6 +1,6 @@
 import { createClient, groq } from "next-sanity";
 import { clientConfig } from "./config";
-import { Experience, Service, Technology, Testimonial } from "@/types";
+import { Experience, Project, Service, Technology, Testimonial } from "@/types";
 
 // function to get all technologies
 export const getTechnologies = async (): Promise<Technology[]> => {
@@ -49,5 +49,22 @@ export const getAllExperiences = async (): Promise<Experience[]> => {
     company,
     duration,
     responsibility,
+  }`);
+};
+
+// function to get all projects
+export const getAllProjects = async (): Promise<Project[]> => {
+  return await createClient(clientConfig).fetch(groq`*[_type == "project"]{
+    _id,
+    _createdAt,
+    name,
+    "slug": slug.current,
+    "image": image.asset->url,
+    "alt": image.alt,
+    description,
+    url,
+    source,
+    tags,
+    content,
   }`);
 };

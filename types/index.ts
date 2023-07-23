@@ -35,3 +35,17 @@ export type Experience = {
   duration: string;
   responsibility: PortableTextBlock[];
 };
+
+export type Project = {
+  _id: string;
+  _createdAt: Date;
+  name: string;
+  slug: string;
+  image: string;
+  alt: string;
+  description: string;
+  url: string;
+  source: string;
+  tags: string[];
+  content: PortableTextBlock[];
+};
